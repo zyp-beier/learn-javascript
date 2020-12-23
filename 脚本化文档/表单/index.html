@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+    <style>
+        #editor{
+            font: bold 24px sans-serif;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <label>
+        name:
+        <input type="text" />
+    </label>
+    <input type="hidden">
+    <label>
+        <input type="reset" />
+    </label>
+    <form action="" id="shipping" name="form" method="post"
+        onreset="return confirm('really erase all input and start over?')"
+    >
+        <fieldset>
+            <legend>Shipping Method</legend>
+            <label for="name">
+                <input type="text" id="name">
+            </label>
+            <label for="name1">
+                <input type="radio" id="name1" name="method" value="1">
+            </label>
+            <label for="name2">
+                <input type="radio" id="name2" name="method" value="2">
+            </label>
+            <label>
+                <input type="radio" name="method" value="3" checked>
+            </label>
+            <label>
+                <input type="checkbox" name="checkbox" checked>
+            </label>
+            <label>
+                <input type="checkbox" name="checkbox">
+            </label>
+            <label>
+                <input type="checkbox" name="vehicle" value="Bike">I have a bike
+            </label>
+            <label>
+                <input type="checkbox" name="vehicle" value="Car">I have a car
+            </label>
+            <label>
+                <select name="country"></select>
+            </label>
+            <input type="submit">
+            <input type="reset">
+            <button onclick="a()">查看数据</button>
+        </fieldset>
+    </form>
+    <div id="editor" contenteditable spellcheck>
+        click to edit
+    </div>
+<!--    <iframe id="editor1" src="index.html" width="1000px" height="500px"></iframe>-->
+</div>
+
+<script>
+   /* let value = document.querySelectorAll('#shipping input[type="radio"][name="method"]')
+    console.log(value)
+    console.log(window.form)  //不可靠
+    console.log(document.form) //当表单有name属性时可用
+    console.log(document.forms.form[0])
+    console.log(document.forms.shipping.elements.method)//<form>元素本身有一个HTML属性和对应的JavaScript属性叫“method”，所以必须要用该表单的elements属性而非直接访问method属性
+    */
+  /* function a(e) {
+       alert(12)
+    }*/
+    /*let zaire = new Option('Zaire','zaire',false,false)
+    let countries = document.forms.shipping.country
+    countries.options[countries.options.length] = zaire*/
+    setTimeout(() => {
+        console.log( getSelectedText())
+    },5000)
+   function getSelectedText() {
+       if(window.getSelection){
+           return window.getSelection().toString()
+       }else if(document.selection){
+           return document.selection.createRange().text
+       }
+   }
+   console.log(window.getSelection())
+    onload = function () {
+        let editor1 = document.getElementById('editor1')
+        editor1.contentDocument.designMode = 'on'
+
+    }
+</script>
+</body>
+</html>

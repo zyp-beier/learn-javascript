@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>clock</title>
+</head>
+<body>
+<div>
+    <div id="clock"></div>
+   <div>
+       <a href="javascript:new Date().toLocaleTimeString()">What time is it?</a>
+   </div>
+    <div>
+        <a href="javascript:alert(new Date().toLocaleTimeString())">What time is it?</a>
+    </div>
+    <div>
+        <a href="javascript:void window.open()">打开一个窗口</a>
+    </div>
+    <div>
+        <a href="javascript: window.open()">打开一个窗口</a>
+    </div>
+    <div>
+        <div onclick="handleJs('js.js')">载入javascript</div>
+    </div>
+    <div>
+        <iframe src="http://www.baidu.com" frameborder="0">百度</iframe>
+    </div>
+    <div>
+        <iframe src="js.js" frameborder="0">js</iframe>
+    </div>
+</div>
+<script>
+    //     function displayTime() {
+    //         let clock = document.getElementById('clock')
+    //         let time = new Date()
+    //         clock.innerHTML = time.toLocaleTimeString()
+    //         setInterval(displayTime,1000)
+    //     }
+    // window.onload = displayTime
+        handleJs = function (url) {
+            let head = document.getElementsByTagName('head')[0];
+            let s = document.createElement('script')
+            s.src = url
+            head.appendChild(s)
+        }
+</script>
+</body>
+</html>

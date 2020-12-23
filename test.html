@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let s = 'zheshizifuchuan'
+    // let S = new String(s)
+    //
+    // console.log(s==S) //true
+    // console.log(s===S) //false
+    // console.log(typeof (s)) //string
+    // console.log(typeof (S)) //object
+    /*对象的比较并非值的比较
+    即使两个对象包含同样的属性及相同的值，
+    它们也是不相等的。
+    各个索引元素完全相等的两个数组也不相等。*/
+    /*let a = {
+        name: 'zhao',
+        age: 22
+    }
+    let b = {
+        name: 'zhao',
+        age: 22
+    }
+    let c = []; d = []
+    console.log(a==b)
+    console.log(c==d)*/
+    /*let q = [];
+    let w = q;
+    w[0] = 1;
+    console.log(q,q==w)*/
+    // let e = [1,4,7,2,5,8,3,6,9];
+    // let r = [];
+    // for(let i=0; i<e.length; i++){
+    //     r[i] = e[i]
+    // }
+    // console.log(r,r===e)
+
+    /*let a = [1,4,7,2,5,8];
+    let b = [1,4,7,2,5,8];
+    function equalArrays(a,b) {
+        if(a.length !== b.length) {
+            return false
+        }
+        for(let i=0;i<a.length;i++){
+            if(a[i] !== b[i]){
+                return false
+            }
+        }
+        return true
+    }
+
+    console.log(equalArrays(a,b))*/
+    /*function f(o) {
+        var i = 0;
+        if(typeof(o) === 'object'){
+            var j = 5
+            for(var k=0; k<10;k++){
+                console.log(k)
+            }
+            console.log('k:', k)
+        }
+        console.log(j)
+    }
+    f({name: '1'})*/
+    /*var t = 10
+    function a() {
+        console.log(t) //undefined
+        var t = 2
+        console.log(t)//2
+    }
+    a()*/
+    /*let obj = {
+        name: 'zhao',
+        age: 22
+    }
+    delete obj.name
+    obj.age++
+    console.log(obj)*/
+    /*let a = [1,4,7,2,5,8]
+    for(i = 0;i<a.length;a[i++]=0);
+        console.log(a)*/
+    //对象数组去重
+    // let arr = [
+    //     {
+    //         id:1,
+    //         name: '西西'
+    //     },
+    //     {
+    //         id:1,
+    //         name: '西西'
+    //     },
+    //     {
+    //         id:2,
+    //         name: '东东'
+    //     },
+    //     {
+    //         id:1,
+    //         name: '楠楠'
+    //     },
+    // ]
+    // function deleteObj(arr) {
+    //     let result = []
+    //     result = arr.reduce(function(prev,cur,index,arr) {
+    //         prev.indexOf(JSON.stringify(cur)===-1 && prev.push(JSON.stringify(cur)))
+    //         return prev
+    //     },[])
+    //     return result
+    // }
+    // console.log(deleteObj(arr))
+    /*let num = 0;
+    for(let i=0,j=10;i<10;i++,j--){
+        num = num + i * j
+    }
+    console.log(num)*/
+    /*f()
+    function f() {
+        console.log('提升')
+    }
+    a()
+    let a = function () {
+        console.log('undefined')
+    }*/
+    //理解错误
+   /* i = j = 1;
+    k = 2;
+    if (i == j)
+        if (j === k)
+            console.log('i equals k')
+        // else
+        //     console.log('i dosn`t equals k')
+    else
+            console.log('i doesn`t equals j')*/
+   //while
+    /*let i = 0
+    while (i<10){
+        console.log(i)
+        i++
+    }*/
+    //do while
+  /* function f(arr) {
+       let i = 0;
+       if(arr.length===0) {
+           return false
+       }else{
+           do{
+               console.log(arr[i])
+           } while (++i<arr.length)
+       }
+   }
+f([1,4,7,2,5,8])*/
+  /*let o = {
+      x: 1,
+      y: 2,
+      e: 3
+  }
+  let a = [], i = 0;
+  for(a[i++] in o);
+    console.log(a)
+  for(item in o){
+  a.push(item)
+  }
+    console.log(a)*/
+
+    /*let matrix = [1,[4,7],2,[5,8],3,[6,9]]
+    let sum = 0, success = false
+    // computed_sum: if(matrix){
+    //     for (let x=0; x<matrix.length; x++){
+    //         let row = matrix[x]
+    //         if (!row) break computed_sum;
+    //         if(typeof row === 'number') sum = sum + row
+    //         for(let y = 0; y<row.length;y++) {
+    //             let cell = row[y]
+    //             if(isNaN(cell)) break computed_sum;
+    //             sum += cell
+    //         }
+    //     }
+    //     success = true
+    // }
+    console.log(sum)
+    let a = [1,[2,[3,[4],3],2],1];
+    let b = a.flat(3);*/
+       /* for(let i=0; i<10; i++) {
+            console.log(i)
+            if(i===5){
+                continue
+            }
+            console.log(i)
+        }*/
+      /* function factorial(x) {
+           if(x<1) throw new Error('x小于1')
+           for(let f = 1;f*=x;x--) return f
+       }
+       try {
+           let n = Number(prompt('请输入一个正整数',''))
+           factorial(n)
+       }catch (e) {
+           alert('hahah')
+       }finally {
+           console.log('总是执行')
+       }*/
+      // try catch
+      /*try {
+          throw new Error('抛出异常')
+      }catch (e) {
+          console.log(e)
+      }*/
+</script>
+</body>
+</html>

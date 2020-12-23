@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .wrap{
+        display: grid;
+        grid-template-columns: 100px 100px 100px;
+        grid-template-rows: 100px 100px 100px;
+    }
+    .item{
+        width:100%;
+       border: 1px solid rosybrown;
+    }
+</style>
+<body>
+<main class="wrap">
+    <div class="item">
+        123
+    </div>
+    <div class="item">
+        456
+    </div>
+    <div class="item">
+        789
+    </div>
+</main>
+<script>
+    // with语句
+    /*let arr = {
+        user:[
+            {
+                info: {
+                    name: 'zhao',
+                    age: 22
+                }
+            },
+            {
+                info:{
+                    name: 'wang',
+                    age: 26
+                }
+            }
+        ]
+    };
+    console.log(arr.user[0].info.name)
+    with (arr.user[0]){
+        console.log(info.age)
+        console.log(info.name)
+    }*/
+    // debugger语句
+    function f(o) {
+        if(o===undefined)
+        console.log(123);
+        console.log(456);
+        console.log(789)
+    }
+f()
+</script>
+</body>
+</html>

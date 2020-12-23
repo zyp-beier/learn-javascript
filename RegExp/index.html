@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    <!-- 正则表达式-->
+    //search  replace  match split
+    // let pattern = /s$/
+    // let pattern = new RegExp("s$")
+    /*console.log("javascript".search(/script/i))    //4
+    console.log("javascript".replace(/javascript/gi,'hello'))
+    console.log("javascript".replace(/a/gi,'e'))  //1.正则表达式，被替换的字符2.替换的字符
+    let quote = /"([^"]*)"/g
+    console.log("qwerqwer".replace(quote,'"$1"'));
+    console.log('1 plus 2 equals 3'.match(/\d+/g))  //['1','2','3']*/
+//解析url match
+   /* let url = /(\w+):\/\/([\w.]+)\/(\S*)/;
+    let text = "Visit my blog at http://www.example.com/~david";
+    let result = text.match(url);
+    console.log(result)
+    if(result != null){
+        let fullurl = result[0];
+        let protocol = result[1];
+        let host = result[2];
+        let path = result[3]
+    }
+    console.log(fullurl,protocol,host,path)*/
+   //split
+    console.log("123,456,789".split(','))
+    console.log('1, 2, 3, 4, 5'.split(/\s*,\s*/))
+    let zipcode = new RegExp("\\d{5}","g")
+    console.log(zipcode)
+    //RegExp的属性
+    // source只读的字符串，包含正则表达式的文本。
+   // global只读的布尔值，说明这个正则表达式是否带有修饰符g。
+   //  ignoreCase只读的布尔值，用以说明正则表达式是否带有修饰符i。
+   //  multiline只读的布尔值，用以说明正则表达式是否带有修饰符m。
+   // lastIndex，可读/写的整数。如果匹配模式带有g修饰符，这个属性存储在整个字符串中下一次检索的开始位置，这个属性会被exec（）和test（）方法用到
+
+</script>
+</body>
+</html>

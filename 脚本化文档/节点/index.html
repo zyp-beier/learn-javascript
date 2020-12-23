@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节点</title>
+</head>
+<body>
+<div>
+    <div style="height:950px;width: 2000px;background-color: lightblue;" onclick="titleScrollIntoView()">
+        147
+    </div>
+    <div style="height: 255px;background: rosybrown;" id="title">
+        title
+    </div>
+    <div id="wrap" style="height:700px;background-color: #4e7a9d;">
+        wrap
+    </div>
+</div>
+<script>
+   /* console.log(window.pageYOffset)
+    console.log(window.innerWidth)
+    console.log(window.innerHeight)
+    let div = document.createElement('div')
+    div.innerText = window.innerHeight
+    document.body.appendChild(div)*/
+    /*let h3 = document.createElement('h3')
+    let h2 = document.createElement('h2')
+    let h4 = document.createElement('h4')
+    h3.innerText = 333
+    h2.innerText = 222
+    h4.innerText = 444
+    document.body.appendChild(h3)
+    document.body.appendChild(h2)
+    document.body.insertBefore(h4,h3)
+    document.body.appendChild(h3)  //将已存在文档中的一个节点再次插入，那个节点将自动从它当前的位置删除并在新的位置重新插入
+
+    h4.parentNode.removeChild(h4)
+    h2.parentNode.replaceChild(document.createTextNode('新替换的节点'),h2)*/
+    /*function reverse(n) {
+        let f = document.createDocumentFragment()
+        while(n.lastChild) f.appendChild(n.lastChild)
+        n.appendChild(f)
+    }
+    let n = document.createElement('div');
+    reverse(n)*/
+ //查询窗口滚动条的位置
+   /* function getScrollOffets(w) {
+        w = w || window
+        if(w.pageXOffset != null) return {x:w.pageXOffset,y:w.pageYOffset}
+        let d = w.document
+        if(document.compatMode == 'CSS1Compat'){
+            console.log(2)
+            return{x:d.documentElement.scrollLeft,y:d.documentElement.scrollTop}
+        }
+        console.log(3)
+        return {x:d.body.scrollLeft,y:d.body.scrollTop}
+    }*/
+
+    // console.log(getScrollOffets())
+
+  /* let wrap = document.getElementById('wrap')
+    let box = wrap.getBoundingClientRect()  //获得在视口坐标中的位置
+    let offsets = getScrollOffets()
+    let x = box.left + offsets.x  //转化为文档坐标
+    let  y = box.top + offsets.y
+   console.log(box)
+   console.log(x)
+   console.log(y)*/
+
+
+   //判定在视口中的指定位置上有什么元素。用Document对象的elementFromPoint（）方法来判定。
+   // console.log(document.elementFromPoint(8,197))
+
+   /* let documentHeight = document.documentElement.offsetHeight
+   console.log(documentHeight)
+    let viewportHeight = window.innerHeight
+   console.log(viewportHeight)
+
+    window.scrollTo(0,documentHeight-viewportHeight)*/
+    // javascript:void setInterval(() => {scrollBy(0,10)},200) //快速阅读 每200毫秒滚动条向下滚动10像素
+
+
+   titleScrollIntoView = function () {
+       let title = document.getElementById('title')
+       console.log(title)
+        title.scrollIntoView(false)
+    }
+</script>
+</body>
+</html>

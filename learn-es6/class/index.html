@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body class="body" id="body" data-title="body">
+<div class="wrap">test</div>
+<div class="title" data-title="标题">title title</div>
+    <script src="index.js"></script>
+</body>
+<script type="text">
+    let wrap = document.getElementsByClassName('wrap')[0]
+    let title = document.getElementsByClassName('title')[0]
+    // console.log(wrap)
+    // console.log(wrap.className)
+    // wrap.setAttribute('data','123')
+    // console.log(wrap.getAttribute('data'))
+    // console.log(title.dataset.title)
+    // title.setAttribute('data-title','标题（修改后）')
+    // console.log(title.dataset.title)
+    console.log(document.body.attributes[2])  //data-title="body"
+    console.log(document.body.attributes.class)  //class="body"
+    console.log(title.innerText)
+    console.log(title.textContent)
+</script>
+<script>
+
+</script>
+</html>

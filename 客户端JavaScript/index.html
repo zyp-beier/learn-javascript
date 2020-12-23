@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>客户端javascript</title>
+    <style>
+        .reveal{
+            color: red;
+        }
+        .revealed{
+            color:green;
+        }
+        .handle {
+            color: pink
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div onclick="taobao()">百度</div>
+    <a href="http://baidu.com">百度</a>
+
+    <div class="reveal">
+            <h1 class="handle">Click here to Reveal Hidden Text</h1>
+        <p>123</p>
+    </div>
+</div>
+<script>
+    window.onload = function () {
+        let elements = document.getElementsByClassName('reveal')
+        for(let i = 0;i<elements.length;i++){
+            let ele = elements[i]
+            let title = ele.getElementsByClassName('handle')[0]
+            addRevealHandler(title,ele)
+        }
+        function addRevealHandler(title,ele) {
+            title.onclick = function () {
+                if(ele.className === 'reveal'){
+                    ele.className = 'revealed'
+                }else if(ele.className === 'revealed'){
+                    ele.className = 'reveal'
+                }
+
+            }
+
+        }
+    }
+    function taobao () {
+        window.loaction = 'http://baidu.com/'
+        console.log(window.loaction)
+    }
+</script>
+</body>
+</html>

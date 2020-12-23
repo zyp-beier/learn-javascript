@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>object</title>
+</head>
+<body>
+<script>
+    /*let a = {
+        name: 1,
+        '':2
+    }
+    let b = a
+    b.name = 3
+    a.name = 4
+    console.log(a)
+    console.log(b)*/
+    // 创建（对象直接量、关键字new和Object.create（））  //new Object() = {} 内置构造函数
+    // 设置（set）
+    // 查找（query）
+    // 删除（delete）
+    // 检测（test）
+    // 枚举（enumerate）
+    // 内置对象：例如数组和函数，日期，正则表达式
+    // 宿主对象：客户端javaScript中表示网页结构的HTMLElement对象均是宿主对象，宿主环境定义的方法可以当成普通的JavaScript函数对象，宿主对象也可以当成内置对象。
+    // 自定义对象：是由运行中javaScript代码创建的对象
+    // 自有属性：是直接在对象中定义的属性
+    // 继承属性：是在对象的原型中定义的属性
+   /* let a = {naem: 1}
+    console.log(Object.prototype)
+    console.log(a.prototype)*/
+    /*let o = {
+        name: 1,
+        age:10,
+        job: 'fontend'
+    };
+    let p = {
+        name: 'zhao',
+        age:10,
+        job: 'teacher'
+    }
+    let j = p
+    j.father = 'USA'
+    j.mather = 'chinese'
+    console.log(Object.keys(j))
+
+    function union(o,p) {
+        return extend(extend({},0),p)
+    }
+
+    console.log(union(o,p))*/
+    /*let p = {
+        x: 1.0,
+        y: 2.0,
+        get r() {return 3},
+        set r(newVal) { this.x = 5}
+    }
+    let s = p
+    s.name = 'zhao'
+    p.r = '123'
+    console.log(s)*/
+    //对象特定属性的属性描述符(自有属性的描述符)
+    // console.log(Object.getOwnPropertyDescriptor({x: 1},"x"))
+/*    let a = {}
+    // 添加一个不可枚举的属性x并赋值为1
+    Object.defineProperty(a,'x',{
+        value: 1,
+        writable: true,  //可写性
+        enumerable: false, //可枚举性
+        configurable: true //可配置性
+    })
+    //属性是存在的，但不可枚举
+    console.log(a) //{x:1}
+    console.log(Object.keys(a)) //[]
+//现在对属性x做修改，让他变为只读
+    Object.defineProperty(a,'x',{
+        writable:false
+    })
+    //试图更改属性的值
+    a.x = 2   //操作失败但不报错
+    console.log(a)
+  //
+    Object.defineProperty(a,'x',{value: 12})
+    console.log(a)
+    Object.defineProperty(a,'x',{get() {return 45}})
+    console.log(a.x)
+    let b = {}
+    Object.defineProperties(b,{
+        a:{value:1,writable:true,enumerable:true,configurable:true},
+        b:{value:2,writable:true,enumerable:true,configurable:true},
+        c:{get() {return 5},enumerable:true,configurable:true},
+    })
+    console.log(b)
+    console.log(b.c)
+    //可写性控制着对值特性的修改。可配置性控制着对其他特性（包括属性是否可以删除）的修改*/
+
+let p = {x: 1}
+
+</script>
+</body>
+</html>

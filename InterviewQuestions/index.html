@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this</title>
+</head>
+<body>
+<div>
+<!--    滚动视差-->
+    <!--<div>
+        <section class="g-word">Header</section>
+        &lt;!&ndash;    <section class="g-img">IMG1</section>&ndash;&gt;
+        &lt;!&ndash;    <section class="g-word">Content1</section>&ndash;&gt;
+        &lt;!&ndash;    <section class="g-img">IMG2</section>&ndash;&gt;
+        &lt;!&ndash;    <section class="g-word">Content2</section>&ndash;&gt;
+        &lt;!&ndash;    <section class="g-img">IMG3</section>&ndash;&gt;
+        &lt;!&ndash;    <section class="g-word">Footer</section>&ndash;&gt;
+        <section class="g-img">IMG1</section>
+        <section class="g-word">Header</section>
+        <div>123456</div>
+        <section class="g-word">Header</section>
+        <div>123456</div>
+        <section class="g-word">Header</section>
+        <div>123456</div>
+        <section class="g-word">Header</section>
+        <div>123456</div>
+        <section class="g-word">Header</section>
+        <div>123456</div>
+        <section class="g-word">Header</section>
+        <div>123456</div>
+        <section class="g-word">Header</section>
+        <div>123456</div>
+        <section class="g-word">Header</section>
+        <div>123456</div>
+        <section class="g-word">Header</section>
+        <div>123456</div>
+        <section class="g-word">Header</section>
+        <section class="g-img">IMG1</section>
+        <section class="g-word">Header</section>
+        <section class="g-img">IMG1</section>
+        <section class="g-word">Header</section>
+        <section class="g-img">IMG1</section>
+        <section class="g-word">Header</section>
+        <section class="g-img">IMG1</section>
+        <section class="g-word">Header</section>
+        <section class="g-img">IMG1</section>
+        <section class="g-word">Header</section>
+    </div>-->
+</div>
+</body>
+</html>
+<script>
+   /* function a() {
+        console.log(this)
+        b.c()
+    }
+    var b = {
+        c:function () {
+            console.log(this)
+        },
+        d: 123
+    };
+    a()
+    console.log(this.b)*/
+
+   /* function Person(name) {
+        this.name = name;
+        this.say = () => {
+            let name = 'zhao';
+            console.log(this.name)
+        }
+    }
+    let person = new Person('yinping')
+    console.log(person.say())*/
+
+   /*let p = {
+       name: 'zhao',
+       fn: function () {
+           return this.name
+       }
+   }
+   console.log(p.fn())
+    var name = 'beibei'
+    let a = {
+        name: 'yinping',
+        fn:function () {
+            console.log(this.name)
+        }
+    }
+    let b = a.fn
+   console.log(b())*/
+
+   /*function Person(name,age) {
+       this.name = name;
+       this.age = age;
+       this.job = ['1','2','3']
+   }
+   function Student(name,age,high) {
+       Person.call(this,name,age)
+        this.high = high
+   }
+   Student.prototype.event = function () {
+       console.log(this.name+this.age+this.high+this.job)
+   }
+
+   new Student('zhao',22,165).event()*/
+
+
+
+</script>
+<style>
+    section{
+        height:200px;
+    }
+    .g-img{
+        background-image:url('http://pic.70hk.com:2313/d/file/kaifadou/201910071853/15579893911753354.jpg');
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center center;
+    }
+    .g-word{
+        background-image:url('http://i8.17173.itc.cn/v3/outcms/2014/05/14/1400066963365_image_8515.jpg');
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center center;
+    }
+    html body{
+        padding:0;
+        margin:0;
+    }
+    .g-container{
+        width:100%;
+        height:100vh;
+        background-image: url('https://img.ivsky.com/img/tupian/pre/201709/29/shuimian-012.jpg');
+        background-size: cover;
+    }
+</style>

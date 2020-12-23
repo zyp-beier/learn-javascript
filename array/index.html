@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+
+</div>
+<script>
+    /*let a = new Array(10)
+    console.log(a)
+    a['a'] = 'a'
+    a['b'] = 'b'
+    console.log(a) //[ a: "a", b: "b"]*/
+    //for循环能够不能处理稀疏数组
+    //for/in循环能够处理稀疏数组，不存在的索引将不会遍历到：
+   /* let a = [1,4,7,2,5,8]
+    // console.log(a,a.length)
+    delete a[3]
+    // console.log(a,a.length)
+    for(let i=0; i < a.length;i++){     // 1 4 7 undefined 5 8
+        console.log(a[i])
+    }
+    console.log('--------------------------')
+    for(let i in a){        // 1 4 7 5 8
+        console.log(a[i])
+    }*/
+   //如果数组同时拥有对象属性和数组元素，返回的属性名很可能是按照创建的顺序而非数值的大小顺序
+   /*let a = new Array(10)
+    a['a'] = 1
+    a['b'] = 2
+    a['dengdeng'] = 3
+    a['re'] = 4
+    a[3] = 9
+    a['we'] = 4
+    a['are'] = 4
+    console.log(a)
+    for(let i in a){
+        console.log(i)
+    }
+    console.log('----------------------------------------')
+    for(let i=0;i<a.length;i++){
+        console.log(a[i])
+    }
+    console.log('-----------------------------------------')
+    let sum = 0
+    let b = [1,2,3,4,5,6]
+    b.forEach(i => {
+        sum += i
+    })
+    console.log(sum)*/
+   //Array.join（）方法将数组中所有元素都转化为字符串并连接在一起，返回最后生成的字符串。
+    /*let a = [1,4,7,2,5,8,3,6,9];
+    let b = a.join(' ');
+    let c = a.join('');
+    let d = a.reverse();
+    let e = a.sort();
+    let f = a.reverse();
+    console.log(b,c,d,e,f)*/
+
+    /*function findall(a,x) {
+        let result = []
+        let length = a.length
+        let pos = 0
+        while(pos<length){
+            pos = a.indexOf(x,pos)
+            if(pos===-1) break
+            result.push(pos)
+            pos ++
+        }
+        return result
+    }
+
+    console.log(findall([1,2,3,4,2,1],2))*/
+
+    // console.log(typeof [])
+    /*let a = {}
+    let i = 0
+    while(i<10){
+        a[i] = i*i;
+        i++
+    }
+    a.length = i
+    console.log(a,a.length)
+    let total = 0;
+    for(let j = 0; j<a.length;j++){
+        total += a[j]
+    }
+    console.log(total)*/
+
+    let a = {'0':'a', '1':'b', '2':'c'}
+    let s = 'JavaScript'
+    Array.join = Array.join || function(a,sep){
+        return Array.prototype.join.call(a,sep)
+    };
+    console.log(a)
+    console.log(Array.join(a,'-'))
+    console.log(Array.join(s,'-'))
+</script>
+</body>
+</html>

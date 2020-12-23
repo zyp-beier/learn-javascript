@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对话框</title>
+</head>
+<body>
+<div>
+
+</div>
+<script>
+    alert('hello')
+    do{
+        confirm('what is you name?')
+    }while (false)
+    while(true){
+        if(confirm('爱我？')===false){
+            continue;
+        }
+        break
+    }
+    let a = prompt('请输入','333')
+    document.write(a)
+
+
+    //错误处理
+    window.onerror = function (msg,url,line) {
+        if(onerror.num++ <onerror.max){
+            alert('ERROR:' + msg + '/n' + url + ':' + line)
+            return true
+        }
+    }
+    onerror.max = 3
+    onerror.num = 0
+</script>
+</body>
+</html>

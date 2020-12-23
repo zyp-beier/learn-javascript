@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包</title>
+</head>
+<body>
+<script>
+    //JavaScript函数的执行用到了作用域链，这个作用域链是函数定义的时候创建的。
+    // 嵌套的函数b（）定义在这个作用域链里，其中的变量a一定是局部变量，
+    // 不管在何时何地执行函数b（），这种绑定在执行b（）时依然有效。
+    // 因此最后一行代码返回“local”，而不是“global”
+    /*let a = 'global'
+    function f() {
+        let a = 'local'
+        function b() {return a}
+        return b
+    }
+
+    console.log(f()())*/
+    // 利用闭包实现的私有属性存取器方法
+    /*function addPrivateProperty(o,name,predicate) {
+            let value
+        o['get' + name] = function () {
+            return value
+        };
+        o['set' + name] = function (v) {
+            if(predicate && !predicate(v)){
+                throw new Error('set' + name + ': invalid value' + v)
+                // console.log(123)
+            }else {
+                value = v
+            }
+        }
+    }
+    let o = {}
+    addPrivateProperty(o,'Name',function (x) {
+        return typeof x === 'string'
+    })
+    o.setName(8)
+    console.log(o.setName())
+    o.setName = 5*/
+
+    /*function constfuncs() {
+        let funcs = []
+        for(let i = 0; i<10; i++){
+            funcs[i]  = function () {
+                return i
+            }
+        }
+        return funcs
+    }
+    let funcs = constfuncs()
+    */
+
+    // 函数属性
+    //判断实参和形参的个数是否正确
+    /*function check(args) {
+        let actual = args.length     //实参的真实个数
+        let expected = args.callee.length  //期望实参的真实个数
+        console.log(actual)
+        console.log(expected)
+        if(actual !== expected) throw Error('Expected' + expected + 'args; got' + actual)
+    }
+    function f( x, y, z) {
+        check(arguments);  //检查实参个数和期望的实参个数是否一致
+        return x + y + z
+    }
+    f(1,2,3,4)*/
+    //call apply
+    /*let o = {
+        name: 5,
+        number1: 3,
+        number2: 6
+    }
+    function f(a,b) {
+        console.log(this.number1 + this.number2)
+        console.log(b-a)
+    }
+    f.call(o,3,9)
+    f.apply(o,[3,9])*/
+
+  /*  function treace(o,m) {
+        let original = o[m]
+        o[m] = function () {
+            console.log(new Date(),'Entering:' + m) //输入日志消息
+            let result = original.apply(this,arguments)
+            console.log(new Date(),'Entering:' + m)
+            return result
+        }
+    }*/
+    //bind
+        /*function f(y) { return this.x + y} //到绑定的函数
+        let a = { x: 8} //将要绑定的对象
+        let g = f.bind(a)
+        console.log(g(2))*/
+    //实现bing
+   /* function bind(f,o) {
+        // if(f.bind){
+        //     return f.bind(o)
+        // }else{
+            return f.apply(o,arguments)
+        // }
+    }
+
+    // console.log(bind(function () {
+    //     return this.num + 5
+    // },{num:1}))*/
+   /*let sum = function (x,y) {return x + y}
+   let succ = sum.bind(null,1)
+    console.log(succ(2))
+
+    function f(y,z) {return this.x + y + z}
+    let g = f.bind({x:1},2);
+    console.log(g(3))*/
+
+   // toString
+   /* function f() {
+        return 1+2
+    }
+    console.log(f.toString())*/
+   //创建构造函数
+    /*let f = new Function('x','y','return x * y')
+    console.log(f(5,10))*/
+    //创建的函数并不是使用词法作用域，相反，
+    // 函数体代码的编译总是会在顶层函数执行
+    /*let scope = "global"
+    function constructFunction() {
+        let  scope = 'local'
+        return new Function('return scope')
+    }
+
+    console.log(constructFunction()()) //global*/
+    //检测一个对象是否是真正的函数对象
+    /*function isFunction(x) {
+        return Object.prototype.toString.call(x) === '[object Function]'
+    }
+
+    console.log(isFunction(
+        function () {
+            console.log(1)
+        }
+    ))  //true
+    console.log(isFunction({})) //false*/
+<!-------------------函数式编程----------------------------->
+    //高阶函数
+    /*function not(f) {
+        return function () {
+            let result = f.apply(this,arguments)
+            return !result
+        }
+    }
+    let even = function (x) {return x % 2 === 0}
+    let odd = not(even);
+    console.log([1,1,3,5,5].every(odd))*/
+   /* function mapper(f) {
+        return function (a) { return map(a,f)}
+    }
+    let increment = function (x) {return x + 1}
+    let incrementer = mapper(increment)
+    console.log(incrementer([1,2,3,4]))*/
+  /* function compose(f,g) {
+       return function () {
+           return f.call(this, g.apply(this,arguments))
+       }
+   }
+   let square = function (x) {return x * x};
+   let sum = function (x,y) {return x + y};
+   let squareofsum = compose(square,sum)
+    console.log(squareofsum(2,3)) //25*/
+  //不完全函数
+   /* function array(a,n) {
+        return Array.prototype.slice.call(a,n||0)
+    }
+    function partialLeft(f) {
+        let args = arguments;
+        return function () {
+            let a = array(args,1)
+            a = a.concat(array(arguments))
+            return f.apply(this,a)
+        }
+    }
+    function partialRight(f) {
+        let args = arguments;
+        return function () {
+            let a = array(arguments)
+            a = a.concat(array(args,1))
+            return f.apply(this,a)
+        }
+    }
+    function partial(f) {
+        let args = arguments;
+        return function () {
+            let a = array(args,1)
+            for(let i = 0,j = 0 ; i < a.length; i++) {
+                if(a[i]===undefined) a[i] = arguments[j++]
+                a = a.concat(array(arguments,j))
+                return f.apply(this,a)
+            }
+        }
+
+    }
+    function f(x,y,z) {return x * (y - z)}
+
+    console.log(partialLeft(f,2)(3,4))
+    console.log(partialRight(f,2)(3,4))
+    console.log(partial(f,undefined,2)(3,4))*/
+   // 记忆
+    /*function memorize(f) {
+        let cache = {}
+        return function () {
+            let key = arguments.length + Array.prototype.join.call(arguments,',')
+            console.log(key)
+            if(key in cache) return cache[key]
+            else{
+                return cache[key] = f.apply(this,arguments)
+            }
+        }
+    }*/
+</script>
+</body>
+</html>

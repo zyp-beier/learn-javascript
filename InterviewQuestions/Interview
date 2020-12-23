@@ -1,0 +1,7 @@
+1.反转一个字符串
+let a = 'abcdefg'
+console.log(a.split(' ').reverse().join(''))//gfedcba
+
+
+进入全局环境上下文
+进入全局环境上下文

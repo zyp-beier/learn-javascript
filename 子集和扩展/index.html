@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>结构赋值</title>
+</head>
+<body>
+<script>
+    let user = {
+        name: 'a',
+        age:22,
+        impl:[
+            {engine:1,version:1.7},
+            {engine:2,version:1.5},
+        ]
+    }
+//使用解构赋值从数据中提取值
+    let {name,age,impl} = user
+    console.log(name,age,impl)
+
+    for(let p in user){
+        console.log(p)
+    }
+
+</script>
+</body>
+</html>
