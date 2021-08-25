@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>复制，粘贴</title>
+</head>
+<body>
+  <div>
+    <input type="text" id='copy'>
+    <button onclick='copy()'>复制</button>
+    <button onclick="paste()">粘贴</button>
+    <input type="text" id='output'>
+  </div>
+</body>
+<script>
+  // 一
+   // 只能从输入框复制（只能复制可编辑的内容）
+  function copy() {
+    const inputElement = document.querySelector('#copy')
+    inputElement.select()
+    document.execCommand('copy')
+  }
+  function paste() { //unfinished
+    const pasteText = document.querySelector('#output');
+    pasteText.focus();
+    document.execCommand('paste');
+  }
+ 
+
+</script>
+</html>

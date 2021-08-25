@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <div id="wrap">click</div>
+</body>
+<script>
+  function handleClick () {
+    console.log(this) // window
+  }
+
+  //使用DOM0方式为事件处理程序赋值时，所赋函数被视为元素的方法,事件处理程序会在元素的作用域中运行，即this等于元素
+  const wrap = document.getElementById('wrap')
+  wrap.onclick = function handleClick () {
+    console.log(this.id)
+  }
+</script>
+</html>

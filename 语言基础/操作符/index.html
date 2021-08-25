@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>操作符</title>
+</head>
+<body>
+  
+</body>
+<script>
+
+  // ECMAScript7新增了指数操作符
+  console.log(Math.pow(3,2));  //9
+  console.log(3**2);//9
+  console.log(Math.pow(16,0.5));//4
+  console.log(16**0.5);//4
+
+  console.log('23' < '3'); //true因为两个操作数都是字符串，所以会逐个比较它们的字符编码
+  console.log('23' < 3); //false 只要是数值和字符串比较，字符串就会先被转换为数值，然后进行数值比较
+
+   console.log(NaN < 3)
+   console.log(NaN >= 3);//在比较NaN时，无论是小于还是大于等于，比较的结果都会返回false。
+</script>
+</html>

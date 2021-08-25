@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="index1.js"></script>   <!-- 2---->
+  <script src="index.js"></script>  <!-- 标识符a已被声明(命名冲突)---->
+</head>
+<body>
+  <div>
+
+  </div>
+  <script>
+    function foo (a,b) {
+      return a + b
+    }
+    let obj= {
+      name: 'zhaoYinPing',
+      age: 23,
+      job: 'frontEnd',
+      method: function() {
+        return `${this.name}的年龄,是${this.age},工作是${this.job}`
+      }
+    }
+    let a = {
+        name: 'wangBin',
+        age: 27,
+        job: 'fullStack'
+      }
+
+      // obj.method.call(a)
+      console.log(obj.method.call(a));
+  </script>
+</body>
+</html>

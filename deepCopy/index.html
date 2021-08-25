@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+
+<script>
+ //浅拷贝
+  const a = {
+    name: 'zhaoyinping',
+    age: 17,
+    job: 'frontend'
+  }
+  const b = a
+  b.name = 'zhaobeibei'
+  a.age = 20
+
+ // age: 20
+ // job: "frontend"
+ // name: "zhaobeibei"
+ // console.log(a,b)
+
+  //深拷贝
+  let c = JSON.parse(JSON.stringify(a))
+  c.name='zyp'
+  // console.log(c, a);
+  let d = {
+    name: 'zyp',
+    say: {
+      hi: 'yes'
+    }
+  }
+
+  let e = JSON.parse(JSON.stringify(d))
+  e.name = 'zzyypp'
+ // console.log(d,e);
+//只进行一层浅拷贝
+ let f = {...d}
+ f.name = 'zbb'
+ // console.log(d,f);
+f.say.hi = 'no'
+console.log(d,f);
+</script>
+</html>

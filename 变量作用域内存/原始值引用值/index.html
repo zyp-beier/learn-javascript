@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>原始值和引用值</title>
+</head>
+<body>
+  
+</body>
+<script>
+    // let a = 'name'    // 原始值保存在栈内存上
+    // let b = new String('name') //引用值保存在堆内存上
+    // a.age = 23
+    // b.age = 24
+    // console.log(a.age); // undefined
+    // console.log(b.age); //24
+    // console.log(typeof a); //string
+    // console.log(typeof b); //object
+
+
+    // 函数参数为值传参
+    // function addTen(count) {
+    //   count += 10
+    //   return count
+    // }
+    // let count = 20
+    // console.log(count); //20
+    // console.log(addTen(count)); //30
+    // // 函数参数为引用传参
+    // function setName(objet) {
+    //   objet.name = 'zhaoyinping'
+    // }
+    // let obj = {}
+    // setName(obj)
+    // console.log(obj); // {name:"zhaoyinping"}
+    // // 原始值包装类型
+    // let a = 5
+    // console.log(typeof a)//number
+    // let b = new Number(5)
+    // console.log(typeof b) // object
+    // let c = 'zhaoyinping'
+    // console.log(typeof c) // string
+    // let d = new String('zhaoyinping')
+    // let f = d
+    // console.log(d)
+    // console.log(typeof d)//object
+    //   d = '34'
+    // console.log(f) //zhaoyinping
+    // // a保存的是原始值 b保存的是实例
+
+      //原始boolean值 and boolean对象
+    // 所有对象在Boolean中都会转为true
+    // let falseObject = new Boolean(false)
+    // let value = falseObject && true
+    // console.log(value); //true
+    // let falseValue = false
+    // let result = falseValue && true
+    // console.log(result);  //false
+
+
+    // console.log(Array.from('marry')); //["m", "a", "r", "r", "y"]
+    // console.log(Array.of(1,2,3,4)); //[1, 2, 3, 4]
+    // console.log(Array.of(undefined)); //[undefined]
+    //循环map会跳过空位
+    // const a = ['f', 'd', 't', 'h']
+    // const keys = Array.from(a.keys())
+    // const values = Array.from(a.values())
+    // const entries = Array.from(a.entries())
+    // console.log(keys);  // [0, 1, 2, 3]
+    // console.log(values); //["f", "d", "t", "h"]
+    // console.log(entries); // [[0,"f"], [1,"d"],[2,"t"],[3,"h"]]
+    // console.log(a.includes('f')); // true
+    // console.log(a.includes('fa')); // false
+
+    const wm = new WeakMap()
+    console.log(wm);
+
+    let arr = [1,3,4,5]
+    let arr2 = [...arr]
+    console.log(arr,arr2);
+    console.log(arr === arr2); //false
+    console.log(arr == arr2);  //false
+
+    let map1 = new Map([[1,2],[3,4]])
+    let map2 = new Map(map1)
+    console.log(map1,map2); 
+  
+</script>
+</html>

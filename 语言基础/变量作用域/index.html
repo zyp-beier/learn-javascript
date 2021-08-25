@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>变量作用域</title>
+</head>
+<body>
+  <div>
+
+  </div>
+  <script>
+    //1.let声明的作用域是块作用域，var是函数作用域
+    // if (true) {
+    //   var name = 'zyp'
+    //   console.log(name);   //zyp
+    // }
+    // console.log(name); //zyp
+    // if (true) {
+    //   let age = 23
+    //   console.log(age); //23
+    // }
+    // console.log(age); //error age is not defined
+    //2.let声明的变量不会在作用域中被提升，var会被提升 
+    // console.log(b); // undefined
+    // var b = 4
+    // console.log(a);//error
+    // let a = 3
+    //3.与var关键字不同，使用let在全局作用域中声明的变量不会成为window对象的属性
+    // var c = 5
+    // console.log(window.c); //5
+    // let d = 6
+    // console.log(window.d);//undefined
+    //4.const声明的限制只适用于它指向的变量的引用,
+    //如果const变量引用的是一个对象，那么修改这个对象内部的属性并不违反const的限制。
+    // const obj = {}
+    // obj.name = 1
+    // console.log(obj);
+
+    // let a = {}
+    // const b = a
+    // a.name = 3
+    // console.log(b);
+  </script>
+</body>
+</html>
